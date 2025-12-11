@@ -1,9 +1,8 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import { Card, Title, Paragraph, Avatar, Button } from "react-native-paper";
+import { ScrollView, View, StyleSheet, Linking, TouchableOpacity } from "react-native";
+import { Card, Title, Paragraph, Avatar } from "react-native-paper";
 
-const imageSource = require("../assets/foto.jpeg")
-
+const imageSource = require("../assets/foto.jpeg");
 
 export default function ProfileScreen() {
   const nome = "Ezequiel Borges";
@@ -30,7 +29,7 @@ export default function ProfileScreen() {
     {
       id: "3",
       empresa: "Projeto Integrador — CBMPE",
-      periodo: "2025",
+      periodo: "2025.2",
       descricao:
         "Sistema para auxiliar no registro de ocorrências para a CBMPE.",
     },
@@ -46,7 +45,10 @@ export default function ProfileScreen() {
   ];
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ paddingBottom: 80 }} // <-- AQUI
+    >
       <Card style={styles.card}>
         <Card.Content style={styles.header}>
           <Avatar.Image size={110} source={imageSource} style={styles.avatar} />
@@ -84,20 +86,31 @@ export default function ProfileScreen() {
               • {h}
             </Paragraph>
           ))}
-        </Card.Content>
 
-        <Card.Actions style={{ justifyContent: "flex-end" }}>
-          <Button
-            mode="contained"
-            textColor="#000"
-            buttonColor="#bb86fc"
-            onPress={() => alert("Tela de edição ainda não implementada.")}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>
+            Contato
+          </Paragraph>
+
+          <TouchableOpacity
+            onPress={() => Linking.openURL("mailto:ezequielborgesdev@gmail.com")}
           >
-            Editar
-          </Button>
-        </Card.Actions>
+            <Paragraph style={[styles.text, styles.link]}>
+              📧 ezequielborgesdev@gmail.com
+            </Paragraph>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL("https://linkedin.com/in/ezequielborgesdev")
+            }
+          >
+            <Paragraph style={[styles.text, styles.link]}>
+              🔗 linkedin.com/in/ezequielborgesdev
+            </Paragraph>
+          </TouchableOpacity>
+        </Card.Content>
       </Card>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -131,6 +144,9 @@ const styles = StyleSheet.create({
   },
   textSecondary: {
     color: "#b0b0b0",
+  },
+  link: {
+    textDecorationLine: "underline",
   },
   sectionTitle: {
     marginBottom: 6,
