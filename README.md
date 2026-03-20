@@ -24,7 +24,7 @@ npm install -g expo-cli
 
 3. Rodar o projeto
 
-npx expo start
+   npx expo start
 
 
 
