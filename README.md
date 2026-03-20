@@ -1,41 +1,50 @@
-**Currículo — Ezequiel Borges**
+# 📱 Currículo Interativo — Ezequiel Borges
 
-Currículo Interativo em React Native
-Este projeto é um currículo interativo desenvolvido em React Native usando Expo e React Native Paper. Ele exibe informações minha sobre formação acadêmica, experiências e habilidades.
+Um currículo moderno desenvolvido em **React Native**. Este projeto utiliza o ecossistema do **Expo** junto com a biblioteca **React Native Paper** para apresentar de forma elegante informações sobre minha formação acadêmica, experiências profissionais e habilidades.
 
-**Instruções para Rodar o Projeto**
+---
 
-1. Pré-requisitos
-<ul>
-  <li>Node.js (versão LTS recomendada)</li>
-  <li>Expo CLI (opcional, mas recomendado)</li>
-  <li>VS Code ou outro editor de código</li>
-  <li>Smartphone com Expo Go ou emulador Android/iOS</li>
-</ul>
+## 🚀 Tecnologias Utilizadas
 
+* **React Native**
+* **Expo**
+* **React Native Paper** (Componentes de Interface)
+* **React Native Vector Icons** (Ícones)
+
+---
+
+## ⚙️ Pré-requisitos
+
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+* [Node.js](https://nodejs.org/) (Versão LTS recomendada)
+* [Expo CLI](https://docs.expo.dev/get-started/installation/) (Opcional, mas recomendado)
+* Um editor de código de sua preferência (ex: [VS Code](https://code.visualstudio.com/))
+* Um smartphone com o aplicativo **Expo Go** instalado (ou um emulador Android/iOS configurado no seu computador)
+
+---
+
+## 🛠️ Como rodar o projeto
+
+Siga os passos abaixo para configurar e executar o aplicativo no seu ambiente local:
+
+### 1. Instalar o Expo CLI
+Caso ainda não tenha o Expo instalado globalmente na sua máquina, abra o terminal e rode:
+```bash
 npm install -g expo-cli
+```
 
-2. Passo 2 — Instalar dependências
+### 2. Instalar as dependências
+Navegue até a pasta do projeto e instale as bibliotecas de interface e ícones:
+```bash
+npm install react-native-paper
+npx expo install react-native-vector-icons
+```
 
-<ul>
-  <li>npm install react-native-paper</li>
-  <li>npx expo install react-native-vector-icons</li>
-</ul>
+### 3. Iniciar o aplicativo
+Com tudo instalado, inicie o servidor do Expo:
+```bash
+npx expo start
+```
 
-3. Rodar o projeto
-
-   npx expo start
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> **💡 Dica:** Após rodar o comando acima, um QR Code aparecerá no terminal. Basta escaneá-lo com a câmera do seu celular (usando o app **Expo Go**) para interagir com o currículo em tempo real!
