@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, View, StyleSheet, Linking, TouchableOpacity } from "react-native";
-import { Card, Title, Paragraph, Avatar } from "react-native-paper";
+import { Card, Title, Paragraph, Avatar, Chip } from "react-native-paper";
 
 const imageSource = require("../assets/foto.jpeg");
 
@@ -9,105 +9,124 @@ export default function ProfileScreen() {
   const cargo = "Estudante de Análise e Desenvolvimento de Sistemas";
 
   const resumo =
-    "Estudante de ADS buscando oportunidade de estágio ou trabalho na área de tecnologia. Experiência com projetos acadêmicos, boa base em desenvolvimento web, banco de dados, além de boa comunicação e trabalho em equipe.";
+    "Estudante de ADS no 4º período, em busca do primeiro estágio ou oportunidade como desenvolvedor. Experiência em projetos acadêmicos, com proficiência em JavaScript, TypeScript, React, Node e MongoDB. Bom trabalho em equipe e motivação para aprender e contribuir no mercado de tecnologia.";
 
   const experiencias = [
     {
       id: "1",
-      empresa: "Residência Acadêmica — Accenture",
-      periodo: "2025.1",
+      empresa: "Faculdade Senac Pernambuco — Designer de Interface",
+      periodo: "Out/2025 - Dez/2025",
       descricao:
-        "Projeto de geração de culturas através de computação quântica.",
+        "Criação da interface das telas mobile do Projeto SIOB (Projeto Integrador do 3º período), focando usabilidade e experiência do usuário.",
     },
     {
       id: "2",
-      empresa: "Projeto Integrador — Point",
-      periodo: "2024.2",
+      empresa: "Faculdade Senac Pernambuco & Accenture Brasil — Desenvolvedor",
+      periodo: "Fev/2025 - Jun/2025",
       descricao:
-        "Desenvolvimento de aplicativo centralizador e organizador de eventos.",
+        "Residência acadêmica: Desenvolvimento de plataforma web para auxiliar agricultores no planejamento de rotação de culturas usando computação quântica (Quantum Annealing). Desenvolvi telas em HTML, CSS e JS, promovendo produtividade e sustentabilidade.",
     },
     {
       id: "3",
-      empresa: "Projeto Integrador — CBMPE",
+      empresa: "Projeto SIOB — Sistema Bombeiros",
       periodo: "2025.2",
       descricao:
-        "Sistema para auxiliar no registro de ocorrências para a CBMPE.",
+        "Desenvolvimento de sistema para modernizar e otimizar o registro de ocorrências do corpo de bombeiros.",
     },
   ];
 
+  const formacao = [
+    {
+      id: "1",
+      instituicao: "Faculdade Senac Pernambuco",
+      curso: "Bacharelado em Análise e Desenvolvimento de Sistemas",
+      periodo: "Ago/2024 - Dez/2026",
+    },
+  ];
+
+  const certificacoes = [
+    "Hooks e Fundamentos do React | SENAC GrowUp 2025.2",
+    "HTTP e Performance | SENAC GrowUp 2025.2",
+  ];
+
   const habilidades = [
-    "HTML/CSS ",
     "JavaScript",
-    "React",
-    "MySQL",
-    "GitHub, Canva, Miro, Figma",
+    "TypeScript",
+    "React / React Native",
+    "Node.js / MongoDB",
+    "Git / GitHub",
+    "Figma",
     "Inglês avançado",
   ];
 
+  const contatos = [
+    { label: "📧 e-mail", url: "mailto:ezequielborgesdev@gmail.com" },
+    { label: "🔗 LinkedIn", url: "https://linkedin.com/in/ezequielborgesdev" },
+    { label: "💻 GitHub", url: "https://github.com/kiellzz" },
+  ];
+
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={{ paddingBottom: 80 }} // <-- AQUI
-    >
+    <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 80 }}>
       <Card style={styles.card}>
+        {/* Header */}
         <Card.Content style={styles.header}>
           <Avatar.Image size={110} source={imageSource} style={styles.avatar} />
-
           <View style={styles.info}>
             <Title style={styles.title}>{nome}</Title>
-            <Paragraph style={styles.textSecondary}>{cargo}</Paragraph>
+            <Paragraph style={styles.cargo}>{cargo}</Paragraph>
           </View>
         </Card.Content>
 
-        <Card.Content style={{ marginTop: 12 }}>
+        {/* Resumo */}
+        <Card.Content style={{ marginTop: 16 }}>
           <Paragraph style={styles.sectionTitle}>Resumo</Paragraph>
           <Paragraph style={styles.text}>{resumo}</Paragraph>
 
-          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>
-            Experiência
-          </Paragraph>
-
+          {/* Experiência */}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>Experiência</Paragraph>
           {experiencias.map((exp) => (
             <View key={exp.id} style={styles.expItem}>
               <Title style={styles.expEmpresa}>
-                {exp.empresa}{" "}
-                <Paragraph style={styles.expPeriodo}>({exp.periodo})</Paragraph>
+                {exp.empresa} <Paragraph style={styles.expPeriodo}>({exp.periodo})</Paragraph>
               </Title>
               <Paragraph style={styles.text}>{exp.descricao}</Paragraph>
             </View>
           ))}
 
-          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>
-            Habilidades
-          </Paragraph>
-
-          {habilidades.map((h, i) => (
-            <Paragraph key={i} style={styles.text}>
-              • {h}
-            </Paragraph>
+          {/* Formação Acadêmica */}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>Formação Acadêmica</Paragraph>
+          {formacao.map((f) => (
+            <View key={f.id} style={styles.expItem}>
+              <Title style={styles.expEmpresa}>{f.instituicao}</Title>
+              <Paragraph style={styles.text}>
+                {f.curso} ({f.periodo})
+              </Paragraph>
+            </View>
           ))}
 
-          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>
-            Contato
-          </Paragraph>
+          {/* Certificações */}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>Certificações</Paragraph>
+          {certificacoes.map((c, i) => (
+            <Paragraph key={i} style={styles.text}>• {c}</Paragraph>
+          ))}
 
-          <TouchableOpacity
-            onPress={() => Linking.openURL("mailto:ezequielborgesdev@gmail.com")}
-          >
-            <Paragraph style={[styles.text, styles.link]}>
-              📧 ezequielborgesdev@gmail.com
-            </Paragraph>
-          </TouchableOpacity>
+          {/* Habilidades */}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>Habilidades</Paragraph>
+          <View style={styles.chipContainer}>
+            {habilidades.map((h, i) => (
+              <Chip key={i} style={styles.chip} textStyle={{ color: "#fff" }}>
+                {h}
+              </Chip>
+            ))}
+          </View>
 
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL("https://linkedin.com/in/ezequielborgesdev")
-            }
-          >
-            <Paragraph style={[styles.text, styles.link]}>
-              🔗 linkedin.com/in/ezequielborgesdev
-            </Paragraph>
-          </TouchableOpacity>
+          {/* Contato */}
+          <Paragraph style={[styles.sectionTitle, { marginTop: 16 }]}>Contato</Paragraph>
+          {contatos.map((c, i) => (
+            <TouchableOpacity key={i} onPress={() => Linking.openURL(c.url)}>
+              <Paragraph style={[styles.text, styles.link]}>{c.label}</Paragraph>
+            </TouchableOpacity>
+          ))}
         </Card.Content>
       </Card>
     </ScrollView>
@@ -126,6 +145,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
+    paddingVertical: 12,
   },
   avatar: {
     backgroundColor: "#333",
@@ -135,35 +155,49 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: "#ffffff",
-    fontSize: 20,
+    color: "#fff",
+    fontSize: 22,
     fontWeight: "700",
+  },
+  cargo: {
+    color: "#b0b0b0",
+    fontSize: 14,
+    marginTop: 4,
+  },
+  sectionTitle: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "700",
+    marginBottom: 6,
   },
   text: {
     color: "#d4d4d4",
-  },
-  textSecondary: {
-    color: "#b0b0b0",
-  },
-  link: {
-    textDecorationLine: "underline",
-  },
-  sectionTitle: {
-    marginBottom: 6,
-    marginTop: 8,
-    color: "#ffffff",
-    fontWeight: "700",
-    fontSize: 16,
+    fontSize: 14,
+    lineHeight: 20,
   },
   expItem: {
     marginBottom: 12,
   },
   expEmpresa: {
     fontSize: 14,
-    color: "#ffffff",
+    color: "#fff",
   },
   expPeriodo: {
     fontSize: 12,
     color: "#999",
+  },
+  chipContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 6,
+  },
+  chip: {
+    backgroundColor: "#333",
+    marginRight: 6,
+    marginBottom: 6,
+  },
+  link: {
+    textDecorationLine: "underline",
+    marginTop: 4,
   },
 });
