@@ -1,50 +1,102 @@
-# 📱 Currículo Interativo — Ezequiel Borges
+# 📱 Interactive Resume — Ezequiel Borges
 
-Um currículo moderno desenvolvido em **React Native**. Este projeto utiliza o ecossistema do **Expo** junto com a biblioteca **React Native Paper** para apresentar de forma elegante informações sobre minha formação acadêmica, experiências profissionais e habilidades.
-
----
-
-## 🚀 Tecnologias Utilizadas
-
-* **React Native**
-* **Expo**
-* **React Native Paper** (Componentes de Interface)
-* **React Native Vector Icons** (Ícones)
+<p align="center">
+  <img src="https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=ffffff" />
+  <img src="https://img.shields.io/badge/React%20Native%20Paper-6200EE?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Vector%20Icons-000000?style=for-the-badge" />
+</p>
 
 ---
 
-## ⚙️ Pré-requisitos
+## 🧠 About the Project
 
-Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+A modern resume application built with **React Native**, designed to present my academic background, professional experience, and technical skills in an interactive and visually appealing way.
 
-* [Node.js](https://nodejs.org/) (Versão LTS recomendada)
-* [Expo CLI](https://docs.expo.dev/get-started/installation/) (Opcional, mas recomendado)
-* Um editor de código de sua preferência (ex: [VS Code](https://code.visualstudio.com/))
-* Um smartphone com o aplicativo **Expo Go** instalado (ou um emulador Android/iOS configurado no seu computador)
+This project uses the **Expo ecosystem** along with **React Native Paper** to deliver a clean and responsive mobile experience.
 
 ---
 
-## 🛠️ Como rodar o projeto
+## 🚀 Tech Stack
 
-Siga os passos abaixo para configurar e executar o aplicativo no seu ambiente local:
+* React Native  
+* Expo  
+* React Native Paper (UI components)  
+* React Native Vector Icons  
 
-### 1. Instalar o Expo CLI
-Caso ainda não tenha o Expo instalado globalmente na sua máquina, abra o terminal e rode:
-```bash
+---
+
+## ⚙️ Requirements
+
+Before getting started, make sure you have the following installed:
+
+* [Node.js](https://nodejs.org/) (LTS version recommended)  
+* [Expo CLI](https://docs.expo.dev/get-started/installation/) (optional, but recommended)  
+* A code editor (e.g. [VS Code](https://code.visualstudio.com/))  
+* A smartphone with **Expo Go** installed  
+  or  
+* An Android/iOS emulator configured on your machine  
+
+---
+
+## 🛠️ Running the Project
+
+Follow the steps below to run the app locally:
+
+### 1. Install Expo CLI
+
+If you don’t have Expo installed globally:
+
+```bash id="expo_install"
 npm install -g expo-cli
-```
+````
 
-### 2. Instalar as dependências
-Navegue até a pasta do projeto e instale as bibliotecas de interface e ícones:
-```bash
+---
+
+### 2. Install dependencies
+
+Navigate to the project folder and install required libraries:
+
+```bash id="deps_install"
 npm install react-native-paper
 npx expo install react-native-vector-icons
 ```
 
-### 3. Iniciar o aplicativo
-Com tudo instalado, inicie o servidor do Expo:
-```bash
+---
+
+### 3. Start the app
+
+Run the Expo development server:
+
+```bash id="expo_start"
 npx expo start
 ```
 
-> **💡 Dica:** Após rodar o comando acima, um QR Code aparecerá no terminal. Basta escaneá-lo com a câmera do seu celular (usando o app **Expo Go**) para interagir com o currículo em tempo real!
+---
+
+### 📱 Usage
+
+After running the command above:
+
+* A QR Code will appear in your terminal
+* Scan it using the **Expo Go** app on your phone
+* The app will open instantly for real-time interaction
+
+---
+
+## 🎯 Purpose
+
+This project was created to:
+
+* Present my resume in a modern and interactive format
+* Explore mobile development with React Native
+* Apply UI/UX principles in a real-world scenario
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Ezequiel Borges**
+
+* GitHub: [https://github.com/kiellzz](https://github.com/kiellzz)
+* LinkedIn: [https://linkedin.com/in/ezequielborgesdev/](https://linkedin.com/in/ezequielborgesdev/)
